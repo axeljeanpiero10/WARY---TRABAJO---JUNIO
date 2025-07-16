@@ -1,0 +1,206 @@
+
+    @media (max-width: 768px) {
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f8;
+      color: #6db6ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .encabezado h1 {
+    animation: agrandarAchicar 4s ease-in-out infinite;
+    }
+
+    @keyframes agrandarAchicar {
+    0%, 100% {
+        font-size: 2.2rem;
+    }
+    50% {
+        font-size: 2.1rem;
+    }
+    }
+
+
+    .encabezado {
+      background: linear-gradient(90deg, #251c87, #9493cc);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      width: 100%;
+      animation: aparecerDesdeArriba 1.2s ease forwards;
+    }
+    .contenedor-guia {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      width: 90%;
+      margin: 2rem 0;
+    }
+    .proceso {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .proceso:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    .proceso ul {
+      text-align: left;
+      margin: 1rem 0;
+      padding-left: 1.2rem;
+      list-style-type: disc;
+      max-width: 400px;
+    }
+    .proceso img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 8px;
+      margin-top: 1rem;
+      animation: deslizarArriba 1s ease forwards;
+    }
+    .carrusel-puertos {
+      width: 90%;
+      max-width: 1000px;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    .carrusel-puertos h2 {
+      color: #0077cc;
+      margin-bottom: 1rem;
+      animation: aparecer 1.5s ease forwards;
+    }
+    .contenedor-imagenes {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 0.5rem;
+    }
+    .contenedor-imagenes::-webkit-scrollbar {
+      height: 8px;
+    }
+    .contenedor-imagenes::-webkit-scrollbar-thumb {
+      background: #0077cc;
+      border-radius: 4px;
+    }
+    .contenedor-imagenes img {
+      flex: 0 0 auto;
+      width: 280px;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .contenedor-imagenes img:hover {
+      transform: scale(1.05);
+    }
+    .pie-pagina {
+      width: 100%;
+      background: #004080;
+      color: white;
+      font-size: 14px;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    @keyframes aparecerDesdeArriba {
+      from {opacity: 0; transform: translateY(-30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes aparecer {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes deslizarArriba {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Diseño responsivo */
+    @media (max-width: 600px) {
+      .contenedor-imagenes img {
+        width: 200px;
+      }
+      .proceso ul {
+        max-width: 100%;
+        padding-left: 1rem;
+      }
+
+      @keyframes deslizar-desde-derecha {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.puertos {
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  max-width: 900px;
+  margin: 40px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.puertos h2 {
+  color: #ffffff; /* azul marino */
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.lista-puertos {
+  display: flex;
+  justify-content: center;
+  gap: 70px; /* espacio entre cada puerto */
+  flex-wrap: nowrap;
+}
+
+.lista-puertos span {
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #e1e8f0;
+  padding: 12px 24px;
+  border-radius: 25px;
+  box-shadow: 0 2px 6px rgba(0, 51, 102, 0.15);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  cursor: default;
+}
+
+.lista-puertos span:hover {
+  background-color: #003366;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+
+}
