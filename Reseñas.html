@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reseñas de Wari</title>
+    <link rel="icon" type="image/png" sizes="20pxx10px" href="RECURSOS/ICONO_3.png">
+    <link rel="apple-touch-icon" href="RECURSOS/Icono - pestaña.png">
+    <header style="background-color: #87589b; display: flex; justify-content: space-between; align-items: center; padding: 10px 30px;">
+    <img src="RECURSOS/BARRA-LOGO.png" height="70px" width="240px" alt="Logo">
+    <nav>
+        <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
+            <li><a href="index.html" style="padding: 0 20px; color: white; text-decoration: none; font-family: Verdana;">INICIO</a></li>
+            <li><a href="nosotros.html" style="padding: 0 20px; color: white; text-decoration: none; font-family: Verdana;">NOSOTROS</a></li>
+            <li><a href="servicios.html" style="padding: 0 20px; color: white; text-decoration: none; font-family: Verdana;">SERVICIOS</a></li>
+            <li><a href="contactanos.html" style="padding: 0 20px; color: white; text-decoration: none; font-family: Verdana;">CONTÁCTANOS</a></li>
+        </ul>
+    </nav>
+</header>
+    <style>
+        /* Estilos CSS existentes y algunas adiciones/ajustes */
+       body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: transparent;
+            color: #ffffff;
+            }
+
+            #videoFondo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            object-fit: cover;
+            opacity: 0.9; /* Puedes ajustar la visibilidad */
+            }
+
+        .header-bg { /* Nueva clase para el fondo del header */
+            background-color: #87589b; /* Morado */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            padding: 0 20px;
+            color: white;
+            text-decoration: none;
+            font-family: Verdana;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .review-section {
+            background-color: rgba(0,0,0,0.7);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 900px;
+            margin: 50px auto;
+        }
+
+        .stars-bar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            color: white; /* Asegurar que el texto sea visible */
+        }
+
+        .bar {
+            height: 10px;
+            background-color: orange;
+            margin-left: 10px;
+            width: 50%; /* Esto será dinámico con JS */
+            border-radius: 5px;
+        }
+
+        .review-card { /* Renombrado de 'review' para diferenciar las dinámicas */
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 10px;
+            color: white; /* Asegurar que el texto dentro de la reseña sea blanco */
+        }
+
+        .review-card strong {
+            font-size: 18px;
+            color: #ffd700; /* Dorado */
+        }
+
+        .review-card .rating-stars {
+            color: gold;
+        }
+
+        .review-buttons button {
+            margin-right: 10px;
+            background-color: #333; /* Gris oscuro */
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .review-buttons button:hover {
+            background-color: #555; /* Gris un poco más claro */
+        }
+
+        input[type="text"], textarea {
+            width: calc(100% - 22px); /* Ajuste para padding */
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc; /* Borde para visibilidad */
+            background-color: rgba(255, 255, 255, 0.9); /* Fondo ligeramente transparente */
+            color: #333; /* Color de texto para inputs */
+        }
+        input::placeholder, textarea::placeholder {
+            color: #666;
+        }
+
+        .submit-btn { /* Clase para el botón de enviar */
+            background-color: #28a745; /* Verde */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .submit-btn:hover {
+            background-color: #218838; /* Verde más oscuro */
+        }
+
+        .rating-stars-input {
+            margin-bottom: 15px;
+        }
+        .rating-stars-input input[type="radio"] {
+            display: none; /* Oculta los radios */
+        }
+        .rating-stars-input label {
+            cursor: pointer;
+            font-size: 2em; /* Tamaño de las estrellas */
+            color: #ccc; /* Estrellas sin seleccionar */
+        }
+        .rating-stars-input label:hover,
+        .rating-stars-input label:hover ~ label,
+        .rating-stars-input input[type="radio"]:checked ~ label {
+            color: gold; /* Estrellas seleccionadas y hover */
+        }
+        .rating-stars-input label:hover {
+            transform: scale(1.1); /* Efecto hover */
+        }
+        .rating-stars-input label:active {
+            transform: scale(0.9);
+        }
+        /* Orden inverso para que el ~ selector funcione correctamente */
+        .rating-stars-input label:nth-child(5) { order: 1; }
+        .rating-stars-input label:nth-child(4) { order: 2; }
+        .rating-stars-input label:nth-child(3) { order: 3; }
+        .rating-stars-input label:nth-child(2) { order: 4; }
+        .rating-stars-input label:nth-child(1) { order: 5; }
+        .rating-stars-input {
+            display: flex;
+            flex-direction: row-reverse; /* Para que la primera estrella sea la de 5 */
+            justify-content: flex-end; /* Alinear a la derecha */
+        }
+
+
+        .history-section {
+            background-color: rgba(0,0,0,0.7);
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 900px;
+            margin: 30px auto;
+            color: white;
+        }
+        .history-section h2 {
+            color: #3498db;
+        }
+        .history-list {
+            list-style: none;
+            padding: 0;
+            max-height: 200px; /* Limitar altura */
+            overflow-y: auto; /* Scroll si es necesario */
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .history-list li {
+            background-color: rgba(255,255,255,0.1);
+            margin-bottom: 5px;
+            padding: 8px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .history-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        footer {
+            background-color: #87589b; /* Morado */
+            color: white;
+            padding: 40px 20px;
+            font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+            text-align: center;
+        }
+
+        footer .CUERPO6 {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        footer .PIE_1, footer .PIE_2, footer .PIE_3 {
+            flex: 1 1 30%;
+            padding: 10px;
+            min-width: 250px; /* Asegurar que no sean demasiado pequeños */
+        }
+        footer h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        footer p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        footer a {
+            color: white; /* Color blanco para los enlaces del footer */
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .cuadro-reclamaciones a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+        }
+        .cuadro-reclamaciones a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            text-decoration: none;
+        }
+
+
+        /* Media Queries para Responsive Design */
+        @media (max-width: 768px) {
+            .header-bg {
+                flex-direction: column;
+                align-items: center;
+                padding: 10px 15px;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 10px;
+            }
+            nav ul li {
+                margin-bottom: 5px;
+            }
+            nav ul li a {
+                padding: 5px 10px;
+            }
+            .review-section, .history-section {
+                margin: 20px auto;
+                padding: 15px;
+            }
+            footer .CUERPO6 {
+                flex-direction: column;
+                align-items: center;
+            }
+            footer .PIE_1, footer .PIE_2, footer .PIE_3 {
+                flex: 1 1 100%;
+                text-align: center;
+                padding: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<video autoplay muted loop id="videoFondo">
+        <source src="RECURSOS/PERU.O.mp4" type="video/mp4">
+</video>
+
+
+    <div class="review-section">
+        <h1>Opiniones de clientes</h1>
+        <h2 id="overallRating">4.3 de 5</h2>
+        <p id="totalReviews">Basado en 59 valoraciones globales</p>
+
+        <div class="stars-bar">5 estrellas <div class="bar" id="bar5Stars"></div></div>
+        <div class="stars-bar">4 estrellas <div class="bar" id="bar4Stars"></div></div>
+        <div class="stars-bar">3 estrellas <div class="bar" id="bar3Stars"></div></div>
+        <div class="stars-bar">2 estrellas <div class="bar" id="bar2Stars"></div></div>
+        <div class="stars-bar">1 estrella <div class="bar" id="bar1Star"></div></div>
+
+        <h2>Escribe tu opinión</h2>
+        <form id="reviewForm">
+            <input type="hidden" id="reviewIdToEdit"> <label for="reviewerName">Nombre:</label>
+            <input type="text" id="reviewerName" placeholder="Tu nombre" required>
+
+            <label for="reviewComment">Comentario:</label>
+            <textarea id="reviewComment" rows="4" placeholder="Escribe tu experiencia..." required></textarea>
+
+            <label>Tu Calificación:</label>
+            <div class="rating-stars-input">
+                <input type="radio" id="star5" name="rating" value="5" required><label for="star5">★</label>
+                <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+                <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+                <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+                <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+            </div>
+
+            <button type="submit" id="submitReviewBtn" class="submit-btn">Enviar reseña</button>
+            <button type="button" id="cancelEditBtn" class="submit-btn" style="display: none; background-color: #e74c3c;">Cancelar Edición</button>
+        </form>
+
+        <div id="reviewsContainer">
+            </div>
+    </div>
+
+    <div class="history-section">
+        <h2>Historial de Interacciones</h2>
+        <ul id="historyList" class="history-list">
+            </ul>
+    </div>
+
+    <footer class="PIE">
+        <div class="CUERPO6">
+            <div class="PIE_1">
+                <img src="RECURSOS/BARRA-LOGO.png" alt="WARY" height="50" style="margin-bottom: 15px;">
+                <p>Promovemos transparencia,<br>rapidez y eficiencia en los<br>procesos de comercio exterior.</p>
+            </div>
+            <div class="PIE_2">
+                <h3>NOSOTROS</h3>
+                <p>Condiciones de servicio</p>
+                <p>Representantes</p>
+                <p>Trabaja con nosotros</p>
+            </div>
+            <div class="PIE_3">
+                <h3>CONTACTANOS</h3>
+                <p>Arequipa, Av. Parra 207, Calle Fierro</p>
+                <p>982 788 020</p>
+                <p>Wary@ventas.pe</p>
+                <div class="cuadro-reclamaciones">
+                    <a href="libro de reclamaciones 2.0.html" target="_blank">Libro de Reclamaciones</a>
+                    <a href="guias.html" target="_blank">GUÍA</a>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 30px; font-size: 14px;">
+            © 2025 WARY. Todos los derechos reservados.
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center; gap: 30px; margin-top: 20px;">
+            <a href="https://www.facebook.com/Gora.llp/">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="https://www.tiktok.com/@second_hand_star.aqp?_t=ZM-8vlSH07dtRe&_r=1">TikTok</a>
+        </div>
+    </footer>
+
+    <script src="reviews.js"></script>
+</body>
+</html>

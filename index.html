@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> WARY| Agencias de aduanas - Envio y recojo (PERÚ)</title>
+    <link rel="icon" type="image/png" sizes="20pxx10px" href="RECURSOS/ICONO_3.png">
+    <link rel="apple-touch-icon" href="RECURSOS/Icono - pestaña.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="ESTILOS/ESTILO1.CSS">
+</head>
+
+<header style="background-color: #87589b; display: flex; justify-content: space-between; align-items: center; padding: 10px 30px;">
+    <img src="RECURSOS/BARRA-LOGO.png" height="70px" width="240px" alt="Logo">
+    <nav>
+        <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
+            <li><a href="nosotros.html" style="padding: 0 20px; color: white; text-decoration: none; font-family: Verdana;">NOSOTROS</a></li>
+            <li><a href="servicios.html" style="padding: 0 20px; color: white; text-decoration: none; font-family: Verdana;">SERVICIOS</a></li>
+            <li><a href="contactanos.html" style="padding: 0 20px; color: white; text-decoration: none; font-family: Verdana;">CONTÁCTANOS</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body style="margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: transparent ; color: #333;">  
+    <video autoplay muted loop id="videoFondo">
+        <source src="RECURSOS/PERU.mp4" type="video/mp4">
+                </video>
+    <div class="CUERPO1" style="padding: 40px 20px; font-family: Verdana, Geneva, Tahoma, sans-serif; background-color: transparent; text-align: center;">
+            
+        <h1 class="mensaje-destacado">
+        <strong>¡SOMOS LA PLATAFORMA N°1 DE AGENCIAS SOBRE ADUANAS A NIVEL NACIONAL!</strong>
+        </h1>
+
+            <form id="formularioBusqueda" style="margin-top: 30px; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 20px;">
+                <input type="text" id="origen" name="Inicio" placeholder="Ingresar Origen" required
+                        style="padding: 10px 20px; width: 200px; border: 1px solid #ccc; border-radius: 8px;">
+
+                <input type="text" id="destino" name="Final" placeholder="Ingresar Destino" required
+                        style="padding: 10px 20px; width: 200px; border: 1px solid #ccc; border-radius: 8px;">
+
+                <input type="date" id="fecha" name="Fecha" required
+                        style="padding: 10px 20px; width: 180px; border: 1px solid #ccc; border-radius: 8px;">
+
+                <button type="submit"
+                        style="background-color: #87589b; color: white; border: none; padding: 12px 25px; border-radius: 10px; font-weight: bold; cursor: pointer; transition: background-color 0.3s ease;">
+                    BUSCAR
+                </button>
+            </form>
+
+                <script>
+                document.getElementById("formularioBusqueda").addEventListener("submit", function(e) {
+                    e.preventDefault();
+
+                    const origen = document.getElementById("origen").value;
+                    const destino = document.getElementById("destino").value;
+                    const fecha = document.getElementById("fecha").value;
+
+                    // Guardar los datos
+                    localStorage.setItem("origen", origen);
+                    localStorage.setItem("destino", destino);
+                    localStorage.setItem("fecha", fecha);
+
+                    // Redirigir a la página de resultados
+                    window.location.href = "resultados.html";
+                });
+                </script>
+        </div>
+
+            <!---CUERPO 1.1 BOTONES enlazados-->
+            <div class="container" >
+                <style>
+                    .container {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    height: 100px; 
+                    }
+                
+                    .button-link {
+                    background-color: #8a9ad1;
+                    color: white;
+                    padding: 15px 30px;
+                    padding-top: 20px;
+    
+                    text-align: center;
+                    font-family: sans-serif;
+                    text-decoration: none; 
+                    display: inline-block; 
+                    }
+                </style>
+                <a href="cobertura.html" target="_blank" class="button-link">Cobertura internacional</a>
+                <a href="factura.html" target="_blank" class="button-link">Factura electronica</a>
+                <a href="clientes.html" target="_blank" class="button-link">Clientes/Empresas/Asociados</a>
+                <a href="prohibiciones.html" target="_blank" class="button-link">Prohibiciones y reglas</a>
+            </div>
+
+            <div class="HORARIOS">
+                <a href="horarios 2.0.html"  target="_blank">HORARIOS 🚨</a>
+            </div>
+            <!---CUERPO 2 - PRESENCIA + imagen y yap-->
+            <section class="CUERPO2" style="background-color: #ffffff; padding: 60px 20px; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                <fieldset style="border: 3px solid #87589b; border-radius: 15px; max-width: 900px; margin: 0 auto; padding: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">            
+                  <legend style="padding: 0 15px; font-size: 24px; font-weight: bold; color: #87589b; letter-spacing: 1px;">🌍 PRESENCIA GLOBAL</legend>             
+                  <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">                   
+                    <p style="max-width: 700px; text-align: center; margin-bottom: 30px; color: #444; font-size: 16px;">
+                      Nuestra red de operaciones se extiende a lo largo del mundo, asegurando un servicio aduanero confiable y eficiente en múltiples países. Seguimos creciendo para estar más cerca de ti.</p>
+                    <img src="RECURSOS/BANDERAS.png" alt="Banderas2" style="height: auto; max-width: 60%; border-radius: 12px; border: 2px solid #ccc;">
+                  </div>             
+                </fieldset>
+              </section>
+              
+        <!---CUERPO 3 - BENEFICIOS-->
+        <section class="CUERPO3" style="font-family: 'Verdana', Geneva, Tahoma, sans-serif; background-color: rgb(0, 0, 0); color: aliceblue; padding: 20px; border-radius: 8px;">
+            <fieldset style="border: 2px solid #fff; padding: 20px; border-radius: 10px;">
+                <legend style="font-size: 1.5em; font-weight: bold; color: #fff;">BENEFICIOS</legend>
+                <div class="BENEFICIOS" style="float: left; width: 45%; padding-right: 10px;">
+                    <ul style="list-style-type: disc; padding-left: 20px; line-height: 1.6;">
+                        <li>Elige tu agencia de preferencia.</li>
+                        <li>Contamos con diferentes métodos de pago.</li>
+                        <li>Estamos presentes en más de 100 países.</li>
+                        <li>Almacenamiento, embalaje y buena rotulación del paquete u otros.</li>
+                        <li>Disponibilidad de buses, grúas y personal capacitado.</li>
+                    </ul>
+                </div>
+                <div class="VIDEO_1" style="float: right; width: 50%; padding-left: 10px;">
+                    <iframe width="100%" height="315" 
+                            src="RECURSOS/VIDEO-Empaque.mp4" 
+                            title="Video" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen 
+                            style="border-radius: 8px;">
+                    </iframe>
+                </div>
+                
+            </fieldset>
+        </section>
+        
+        </section>
+
+            <br>
+
+        <!---CUERPO 4 - BANNER PROMOCIONAL-->
+            <section class="BANNER_1" style="display: flex; justify-content: center; align-items: center; height: 70vh;">
+                <img src="RECURSOS/BANNER_3.jpg" alt="WARY">
+            </section>
+
+           <section class="resenas">
+            <h1>RESEÑAS</h1>
+            <h2>Escribe tu opinión</h2>
+            <form>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" placeholder="Tu nombre" required>
+
+                <label for="comentario">Comentario:</label>
+                <textarea id="comentario" rows="4" placeholder="Escribe tu experiencia..." required></textarea>
+
+                <button type="submit">Enviar reseña</button>
+            </form>
+            <a href="Reseñas.html" target="_blank" style="color: #f3f3f3;">Ver más reseñas</a>
+            </section>
+
+
+        <!---CUERPO 5 - METODOS DE PAGO--->
+            <div class="PAGOS" style="font-family: Verdana, Geneva, Tahoma, sans-serif;background-color:white;">
+                <table class="TABLA_2" align="center"> 
+                    <h1 style="background: #ddd; padding: 25px; padding-left: 60px;"> Metodos de pago</h1>
+                    <tr align="center">
+                    
+                        <td><img src="RECURSOS/VISA.jpg" alt="VISA" height="100" width="150" style="padding-left: 20px; padding-right: 20px;"></td>
+                        <td><img src="RECURSOS/MASTERCARD.jpg" alt="MASTERCARD" height="100" width="150" style="padding-left: 20px; padding-right: 20px;" ></td>
+                        <td><img src="RECURSOS/AMERICAN.jpg" alt="AMERICAN EXPRESS" height="100" width="150" style="padding-left: 20px; padding-right: 20px;"></td>
+                        <td><img src="RECURSOS/YAPE.jpg" alt="Yape" height="100" width="110" style="padding-left: 20px; padding-right: 20px;"></td>
+                        <td><img src="RECURSOS/PLIN.jpg" alt="Plin" height="100" width="110" style="padding-left: 20px; padding-right: 20px;"></td>
+
+                    </tr>
+                </table>
+            </div>
+        
+            <footer class="PIE" style="background-color: #87589b; color: white; padding: 40px 20px; font-family: 'Verdana', Geneva, Tahoma, sans-serif; text-align: center;">
+                <div class="CUERPO6" style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-bottom: 30px;">
+                
+                    <!-- Sección: LOGO -->
+                    <div class="PIE_1" style="flex: 1 1 30%; padding: 10px;">
+                        <img src="RECURSOS/BARRA-LOGO.png" alt="WARY" height="50" style="margin-bottom: 15px;">
+                        <p style="font-size: 14px;">Promovemos transparencia,<br>rapidez y eficiencia en los<br>procesos de comercio exterior.</p>
+                    </div>
+                
+                    <!-- Sección: NOSOTROS -->
+                    <div class="PIE_2" style="flex: 1 1 30%; padding: 10px;">
+                        <h3 style="font-size: 18px; font-weight: bold;">NOSOTROS</h3>
+                        <p style="font-size: 14px; margin: 5px 0;">Condiciones de servicio</p>
+                        <p style="font-size: 14px; margin: 5px 0;">Representantes</p>
+                        <p style="font-size: 14px; margin: 5px 0;">Trabaja con nosotros</p>
+                    </div>
+                
+                    <!-- Sección: CONTACTANOS -->
+                    <div class="PIE_3" style="flex: 1 1 30%; padding: 10px;">
+                        <h3 style="font-size: 18px; font-weight: bold;">CONTACTANOS</h3>
+                        <p style="font-size: 14px;">Arequipa, Av. Parra 207, Calle Fierro</p>
+                        <p style="font-size: 14px;">982 788 020</p>
+                        <p style="font-size: 14px;">Wary@ventas.pe</p>
+                        <div class="cuadro-reclamaciones">
+                        <a href="libro de reclamaciones.html" target="_blank">Libro de Reclamaciones</a>
+                        <a href="guias.html" target="_blank">GUÍA</a>
+                        </div>
+
+                    </div>
+                
+                </div>
+                
+                <!-- Línea final o derechos reservados -->
+                <div style="margin-top: 30px; font-size: 14px;">
+                    © 2025 WARY. Todos los derechos reservados.
+                </div>
+            
+                <!-- Redes Sociales -->
+                <div style="display: flex; justify-content: center; align-items: center; gap: 30px; margin-top: 20px;">
+                    <a href="https://www.facebook.com/Gora.llp/" style="color: white; text-decoration: none; font-size: 14px;">Facebook</a>
+                    <a href="#" style="color: white; text-decoration: none; font-size: 14px;">Instagram</a>
+                    <a href="https://www.tiktok.com/@second_hand_star.aqp?_t=ZM-8vlSH07dtRe&_r=1" style="color: white; text-decoration: none; font-size: 14px;">TikTok</a>
+                </div>
+            </footer>
+            
+</html>

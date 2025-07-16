@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" sizes="20pxx10px" href="RECURSOS/ICONO_3.png">
+  <link rel="apple-touch-icon" href="RECURSOS/Icono - pestaña.png">
+  <link rel="stylesheet" href="Ver detalles.html">
+  <title>Horario de Entregas</title>
+<header style="background-color: #87589b; display: flex; justify-content: space-between; align-items: center; padding: 10px 30px;">
+    <img src="RECURSOS/BARRA-LOGO.png" height="70px" width="240px" alt="Logo">
+    <nav>
+        <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
+          <li><a href="index.html" style="padding: 0 20px; color: white; text-decoration: none; font-family: Verdana;">INICIO</a></li>
+          <li><a href="nosotros.html" style="padding: 0 20px; color: white; text-decoration: none; font-family: Verdana;">NOSOTROS</a></li>
+          <li><a href="servicios.html" style="padding: 0 20px; color: white; text-decoration: none; font-family: Verdana;">SERVICIOS</a></li>
+          <li><a href="contactanos.html" style="padding: 0 20px; color: white; text-decoration: none; font-family: Verdana;">CONTÁCTANOS</a></li>
+        </ul>
+    </nav>
+</header>
+    <style>
+    body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: transparent;
+            color: #333;
+            }
+
+            #videoFondo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            object-fit: cover;
+            opacity: 0.9; /* Puedes ajustar la visibilidad */
+            }
+
+    header {
+      background-color: #9b6fc1;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 30px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .info {
+      flex: 1;
+    }
+
+    .info h3 {
+      margin: 0 0 10px;
+      color: #333;
+    }
+
+    .info p {
+      margin: 4px 0;
+      font-size: 14px;
+    }
+
+    .price {
+      text-align: right;
+    }
+
+    .price span {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .price .monto {
+      font-size: 18px;
+      font-weight: bold;
+      color: #1a73e8;
+    }
+
+    .btn {
+      background-color: #e53935;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none
+    }
+
+    footer {
+      background-color: #9b6fc1;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+
+  </style>
+</head>
+<body>
+<video autoplay muted loop id="videoFondo">
+        <source src="RECURSOS/PERU.mp4" type="video/mp4">
+</video>
+  <h1 style="color: aliceblue;">Horario de Entregas</h1>
+
+  <div class="card">
+    <div class="info">
+      <h3>Empresa: Wary</h3>
+      <p>Salida: 5:00 PM</p>
+      <p>Llegada estimada: 11:00 AM</p>
+      <p>Duración: 18h 00m</p>
+      <p>Ubicación: La Victoria → Arequipa</p>
+    </div>
+    <div class="price">
+      <span>Desde</span>
+      <span class="monto">S/ 30</span>
+      <button class="btn"><a href="Ver detalles.html">VER DETALLES</a></button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="info">
+      <h3>Empresa: Waybus</h3>
+      <p>Salida: 4:30 PM</p>
+      <p>Llegada estimada: 10:30 AM</p>
+      <p>Duración: 18h 00m</p>
+      <p>Ubicación: Lambayeque → Lima</p>
+    </div>
+    <div class="price">
+      <span>Desde</span>
+      <span class="monto">S/ 50</span>
+      <button class="btn"><a href="Ver detalles.html">VER DETALLES</a></button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="info">
+      <h3>Empresa: Bus Perú</h3>
+      <p>Salida: 9:30 PM</p>
+      <p>Llegada estimada: 2:30 PM</p>
+      <p>Duración: 17h 00m</p>
+      <p>Ubicación: Lima → Bogotá</p>
+    </div>
+    <div class="price">
+      <span>Desde</span>
+      <span class="monto">S/ 75</span>
+      <button class="btn"><a href="Ver detalles.html">VER DETALLES</a></button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="info">
+      <h3>Empresa: Servicios Aduaneros Cavinsa</h3>
+      <p>Salida: 9:30 PM</p>
+      <p>Llegada estimada: 2:30 PM</p>
+      <p>Duración: 17h 00m</p>
+      <p>Ubicación: Arequipa → Cusco</p>
+    </div>
+    <div class="price">
+      <span>Desde</span>
+      <span class="monto">S/ 45</span>
+      <button class="btn"><a href="Ver detalles.html">VER DETALLES</a></button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="info">
+      <h3>Empresa: AlphaGestión</h3>
+      <p>Salida: 9:30 PM</p>
+      <p>Llegada estimada: 2:30 PM</p>
+      <p>Duración: 17h 00m</p>
+      <p>Ubicación: Tacna → Áncash</p>
+    </div>
+    <div class="price">
+      <span>Desde</span>
+      <span class="monto">S/ 50</span>
+      <button class="btn"><a href="Ver detalles.html">VER DETALLES</a></button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="info">
+      <h3>Empresa: B&C Despachos</h3>
+      <p>Salida: 9:30 PM</p>
+      <p>Llegada estimada: 2:30 PM</p>
+      <p>Duración: 17h 00m</p>
+      <p>Ubicación: Brasilia → Lima</p>
+    </div>
+    <div class="price">
+      <span>Desde</span>
+      <span class="monto">S/ 85</span>
+      <button class="btn"><a href="Ver detalles.html">VER DETALLES</a></button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="info">
+      <h3>Empresa: J&V Global</h3>
+      <p>Salida: 9:30 PM</p>
+      <p>Llegada estimada: 2:30 PM</p>
+      <p>Duración: 17h 00m</p>
+      <p>Ubicación: Puno → Copacabana</p>
+    </div>
+    <div class="price">
+      <span>Desde</span>
+      <span class="monto">S/ 45</span>
+      <button class="btn"><a href="Ver detalles.html">VER DETALLES</a></button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="info">
+      <h3>Empresa: Aduanas Transmar S.A.C.</h3>
+      <p>Salida: 9:30 PM</p>
+      <p>Llegada estimada: 2:30 PM</p>
+      <p>Duración: 17h 00m</p>
+      <p>Ubicación: Lima → Bogotá</p>
+    </div>
+    <div class="price">
+      <span>Desde</span>
+      <span class="monto">S/ 75</span>
+      <button class="btn"><a href="Ver detalles.html">VER DETALLES</a></button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="info">
+      <h3>Empresa: Turismo Internacional</h3>
+      <p>Salida: 8:45 PM</p>
+      <p>Llegada estimada: 2:45 PM</p>
+      <p>Duración: 18h 00m</p>
+      <p>Ubicación: Santiago de Chile → Lima</p>
+    </div>
+    <div class="price">
+      <span>Desde</span>
+      <span class="monto">S/ 80</span>
+      <button class="btn"><a href="Ver detalles.html">VER DETALLES</a></button>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Libro de Reclamaciones - WARY </title>
+  <link rel="icon" type="image/png" sizes="20pxx10px" href="RECURSOS/ICONO_3.png">
+  <link rel="apple-touch-icon" href="RECURSOS/Icono - pestaña.png">
+  <style>
+    body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: transparent;
+            color: #ffffff;
+            }
+
+            #videoFondo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            object-fit: cover;
+            opacity: 0.9; /* Puedes ajustar la visibilidad */
+            }
+
+    header {
+      background-color: #7b4dbb;
+      color: rgb(255, 255, 255);
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      display: flex;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0);
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .image-section {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 250px;
+    }
+
+    .image-section img {
+      max-width: 100%;
+      border-radius: 15px;
+    }
+
+    .form-section {
+      flex: 2;
+      padding: 20px;
+    }
+
+    .form-section h2 {
+      color: #fefefe;
+      margin-top: 0;
+    }
+
+    .form-section h3 {
+      color: #ffffff;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      margin-top: 5px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    /* Radio buttons inline */
+    label > input[type="radio"] {
+      margin-right: 8px;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+
+    button {
+      margin-top: 20px;
+      background-color: #7b4dbb;
+      color: rgb(248, 248, 248);
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #5c3790;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 25px 0;
+    }
+
+    #datos-menor {
+      margin-top: 10px;
+      padding-left: 15px;
+      border-left: 3px solid #7b4dbb;
+    }
+
+
+
+
+    /* Flexbox rows for form groups */
+    .form-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .form-row > div {
+      flex: 1;
+      min-width: 150px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .image-section, .form-section {
+        flex: unset;
+        width: 100%;
+      }
+
+      .form-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+<video autoplay muted loop id="videoFondo">
+        <source src="RECURSOS/PERU.mp4" type="video/mp4">
+</video>
+
+<header style="background-color: #87589b; display: flex; justify-content: space-between; align-items: center; padding: 10px 30px;">
+    <img src="RECURSOS/BARRA-LOGO.png" height="70px" width="240px" alt="Logo">
+    <nav>
+        <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
+            <li><a href="index.html" style="padding: 0 20px; color: white; text-decoration: none; font-family: Verdana;">INICIO</a></li>
+            <li><a href="nosotros.html" style="padding: 0 20px; color: white; text-decoration: none; font-family: Verdana;">NOSOTROS</a></li>
+            <li><a href="servicios.html" style="padding: 0 20px; color: white; text-decoration: none; font-family: Verdana;">SERVICIOS</a></li>
+            <li><a href="contactanos.html" style="padding: 0 20px; color: white; text-decoration: none; font-family: Verdana;">CONTÁCTANOS</a></li>
+        </ul>
+    </nav>
+</header>
+
+  <div class="container">
+    <div class="image-section">
+      <img src="https://cdn-icons-png.flaticon.com/512/3095/3095583.png" alt="Libro de reclamaciones" />
+    </div>
+    <div class="form-section">
+      <h2>Libro de Reclamaciones</h2>
+      <form action="#" method="post">
+
+        <!-- Fecha y Sede en misma fila -->
+        <div class="form-row">
+          <div>
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha" required />
+          </div>
+          <div>
+            <label for="sede">Sede:</label>
+            <input type="text" id="sede" name="sede" placeholder="Ej. Sede Las Artes" required />
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- 1. IDENTIFICACIÓN DEL USUARIO RECLAMANTE -->
+        <h3>1. IDENTIFICACIÓN DEL USUARIO RECLAMANTE</h3>
+
+        <!-- Nombres y Apellidos en la misma fila -->
+        <div class="form-row">
+          <div>
+            <label for="nombre">Nombres:</label>
+            <input type="text" id="nombre" name="nombre" required />
+          </div>
+          <div>
+            <label for="apellido">Apellidos:</label>
+            <input type="text" id="apellido" name="apellido" required />
+          </div>
+        </div>
+
+        <!-- Domicilio y Urbanización en misma fila -->
+        <div class="form-row">
+          <div>
+            <label for="domicilio">Domicilio:</label>
+            <input type="text" id="domicilio" name="domicilio" />
+          </div>
+          <div>
+            <label for="urbanizacion">Urbanización:</label>
+            <input type="text" id="urbanizacion" name="urbanizacion" />
+          </div>
+        </div>
+
+        <!-- Departamento, Provincia, Distrito en una fila -->
+        <div class="form-row">
+          <div>
+            <label>Departamento:</label>
+            <input type="text" name="departamento" placeholder="Lima" />
+          </div>
+          <div>
+            <label>Provincia:</label>
+            <input type="text" name="provincia" />
+          </div>
+          <div>
+            <label>Distrito:</label>
+            <input type="text" name="distrito" />
+          </div>
+        </div>
+
+        <!-- Tipo de Documento y Número en misma fila -->
+        <div class="form-row">
+          <div>
+            <label for="tipo_documento">Tipo de Documento:</label>
+            <select id="tipo_documento" name="tipo_documento" required>
+              <option value="dni">DNI</option>
+              <option value="ce">CE</option>
+              <option value="ruc">RUC</option>
+            </select>
+          </div>
+          <div>
+            <label for="numero_doc">Número:</label>
+            <input type="text" id="numero_doc" name="numero_doc" required />
+          </div>
+        </div>
+
+        <!-- Email y Teléfono en misma fila -->
+        <div class="form-row">
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" />
+          </div>
+          <div>
+            <label for="telefono">Teléfono:</label>
+            <input type="text" id="telefono" name="telefono" />
+          </div>
+        </div>
+
+        <!-- Menor de Edad -->
+        <label>¿Menor de Edad?</label><br />
+        <label><input type="radio" name="menor" value="no" checked /> No</label>
+        <label><input type="radio" name="menor" value="si" /> Sí</label>
+
+        <div id="datos-menor" style="margin-top: 10px;">
+          <!-- Padre o Madre datos en fila -->
+          <div class="form-row">
+            <div>
+              <label for="padre_nombre">Nombre del Padre o Madre:</label>
+              <input type="text" id="padre_nombre" name="padre_nombre" />
+            </div>
+            <div>
+              <label for="padre_apellido">Apellido:</label>
+              <input type="text" id="padre_apellido" name="padre_apellido" />
+            </div>
+            <div>
+              <label for="padre_dni">DNI:</label>
+              <input type="text" id="padre_dni" name="padre_dni" />
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- 2. IDENTIFICACIÓN DE LA ATENCIÓN BRINDADA -->
+        <h3>2. IDENTIFICACIÓN DE LA ATENCIÓN BRINDADA</h3>
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+
+        <hr />
+
+        <!-- 3. DETALLE DE LA RECLAMACIÓN -->
+        <h3>3. DETALLE DE LA RECLAMACIÓN</h3>
+
+        <!-- Área y Código en fila -->
+        <div class="form-row">
+          <div>
+            <label for="area">Área de Reclamo:</label>
+            <input type="text" id="area" name="area" />
+          </div>
+          <div>
+            <label for="codigo">Ingrese el código:</label>
+            <input type="text" id="codigo" name="codigo" required />
+          </div>
+        </div>
+
+        <label for="detalle">Detalle:</label>
+        <textarea id="detalle" name="detalle" rows="4" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
+
+            <footer class="PIE" style="background-color: #87589b; color: white; padding: 40px 20px; font-family: 'Verdana', Geneva, Tahoma, sans-serif; text-align: center;">
+                <div class="CUERPO6" style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-bottom: 30px;">
+                
+                    <!-- Sección: LOGO -->
+                    <div class="PIE_1" style="flex: 1 1 30%; padding: 10px;">
+                        <img src="RECURSOS/BARRA-LOGO.png" alt="WARY" height="50" style="margin-bottom: 15px;">
+                        <p style="font-size: 14px;">Promovemos transparencia,<br>rapidez y eficiencia en los<br>procesos de comercio exterior.</p>
+                    </div>
+                
+                    <!-- Sección: NOSOTROS -->
+                    <div class="PIE_2" style="flex: 1 1 30%; padding: 10px;">
+                        <h3 style="font-size: 18px; font-weight: bold;">NOSOTROS</h3>
+                        <p style="font-size: 14px; margin: 5px 0;">Condiciones de servicio</p>
+                        <p style="font-size: 14px; margin: 5px 0;">Representantes</p>
+                        <p style="font-size: 14px; margin: 5px 0;">Trabaja con nosotros</p>
+                    </div>
+                
+                    <!-- Sección: CONTACTANOS -->
+                    <div class="PIE_3" style="flex: 1 1 30%; padding: 10px;">
+                        <h3 style="font-size: 18px; font-weight: bold;">CONTACTANOS</h3>
+                        <p style="font-size: 14px;">Arequipa, Av. Parra 207, Calle Fierro</p>
+                        <p style="font-size: 14px;">982 788 020</p>
+                        <p style="font-size: 14px;">Wary@ventas.pe</p>
+                        <div class="cuadro-reclamaciones">
+                        <a href="libro de reclamaciones.html" target="_blank">Libro de Reclamaciones</a>
+                        <a href="guias.html" target="_blank">GUÍA</a>
+                        </div>
+
+                    </div>
+                
+                </div>
+                
+                <!-- Línea final o derechos reservados -->
+                <div style="margin-top: 30px; font-size: 14px;">
+                    © 2025 WARY. Todos los derechos reservados.
+                </div>
+            
+                <!-- Redes Sociales -->
+                <div style="display: flex; justify-content: center; align-items: center; gap: 30px; margin-top: 20px;">
+                    <a href="https://www.facebook.com/Gora.llp/" style="color: white; text-decoration: none; font-size: 14px;">Facebook</a>
+                    <a href="#" style="color: white; text-decoration: none; font-size: 14px;">Instagram</a>
+                    <a href="https://www.tiktok.com/@second_hand_star.aqp?_t=ZM-8vlSH07dtRe&_r=1" style="color: white; text-decoration: none; font-size: 14px;">TikTok</a>
+                </div>
+            </footer>
+
+</body>
+</html>
