@@ -1,6 +1,6 @@
 # Proyecto Web: WARY
 
-Este proyecto simula un sitio web empresarial con múltiples secciones orientadas a servicios, atención al cliente, facturación, reseñas y contacto. Fue desarrollado como parte de un trabajo académico en el curso de Desarrollo Web.
+Este proyecto simula un sitio web empresarial con múltiples secciones orientadas a servicios, atención al cliente, facturación, reseñas y contacto. Fue desarrollado como parte de un trabajo académico en el curso de taller de programacion Web.
 
 ## 🧠 Objetivo
 
